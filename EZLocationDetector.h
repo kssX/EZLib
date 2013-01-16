@@ -1,10 +1,5 @@
-//
-//  FPLocationDetector.h
-//  FindTheParty
-//
-//  Created by Sergey Kovalenko on 1/9/13.
-//
-//
+//  Created by kssX on 1/9/13.
+
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
