@@ -117,7 +117,7 @@
     CLLocation* location = [locations lastObject];
     NSDate* eventDate = location.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < LOCATION_EXPIRATION_LIMIT) {
+    if (abs(howRecent) < LOCATION_EXPIRATION_LIMIT && location.horizontalAccuracy <= manager.desiredAccuracy) {
         self.currentUserLocation = location;
         self.locationDetectionTimeStamp = eventDate;
         [self performCompletionHandlersWithLocation:location];
