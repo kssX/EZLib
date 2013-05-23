@@ -16,5 +16,7 @@
 - (BOOL)isDateOnCurrentMonth:(NSDate *)date;
 - (BOOL)isDateOnCurrentYear:(NSDate *)date;
 
+- (NSString *)timeTillDate:(NSDate *)date;
+
 - (BOOL)localDatesOnTheSameDay:(NSDate *)startDate endDate:(NSDate *)endDate; 
 @end

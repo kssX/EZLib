@@ -59,6 +59,31 @@
 }
 
 
+- (NSString *)timeTillDate:(NSDate *)date
+{
+    NSDateComponents *components;
+ 
+    components = [self components:NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit fromDate:[NSDate date] toDate:date options:0];
+    
+    NSString *dayDifference = @"";
+    if ([components day] > 0) {
+       dayDifference = [NSString stringWithFormat:@"%d %@", [components day], [components day] == 1 ? @"day ":@"days "];
+    }
+    
+    NSString *hourDifference = @"";
+    if ([components hour] > 0) {
+        hourDifference = [NSString stringWithFormat:@"%d %@", [components hour], [components hour] == 1 ? @"hour ":@"hours "];
+    }
+    
+    NSString *minuteDifference = @"";
+    if ([components day] == 0 || [components hour] == 0) {
+        minuteDifference = [NSString stringWithFormat:@"%d %@", [components minute], [components minute] == 1 ? @"minute ":@"minutes "];
+    }
+    
+    return [NSString stringWithFormat:@"%@%@%@", dayDifference, hourDifference, minuteDifference];
+}
+
+
 
 
 
